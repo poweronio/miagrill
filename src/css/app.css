@@ -776,7 +776,7 @@ body {
     .app-aside-folded .navbar-collapse,
     .app-aside-folded .app-content,
     .app-aside-folded .app-footer {
-        margin-left: 60px;
+        margin-left: 0px;
     }
     .app-aside-folded .app-header .navbar-brand {
         display: block;
