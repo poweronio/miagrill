@@ -31,9 +31,9 @@
         <div class="col-sm-6" ng-show="details">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h4><strong>{{item.name}} - This Includes</strong></h3>
+                    <h4><strong>{{thing.name}} - This Includes</strong></h3>
                 </div>
-                <div class="list-group bg-white" ng-repeat="include in item.includes track by $index">
+                <div class="list-group bg-white" ng-repeat="include in thing.includes track by $index">
                     <a href class="list-group-item">
                         <i class="fa fa-fw fa-check-square-o"></i> {{include}}
                     </a>
@@ -107,12 +107,11 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
 
-                                    <span ng-controller="ModalDemoCtrl" class="ng-scope">
-          <script type="text/ng-template" id="myModalContent.html">
-            <div ng-include="'tpl/modal.form.html'"></div>
-          </script>
-          <button ng-disabled='form.$invalid' class="btn btn-lg w-sm btn-success" ng-click="open('lg')" tabindex="0">Submit Quote</button>
-        </span>
+
+                                    <script type="text/ng-template" id="myModalContent.html">
+                                        <div ng-include="'tpl/modal.form.html'"></div>
+                                    </script>
+                                    <button ng-disabled='form.$invalid' class="btn btn-lg w-sm btn-success" ng-click="open('lg')" tabindex="0">Submit Quote</button>
                                 </div>
                             </div>
                         </div>

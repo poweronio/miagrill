@@ -3,7 +3,26 @@
 /* Controllers */
 
 // Form controller
-app.controller('FormDemoCtrl', ['$scope', 'GoogleDistanceAPI', function ($scope, GoogleDistanceAPI) {
+app.controller('FormDemoCtrl', ['$scope', 'GoogleDistanceAPI', '$modal', '$log', function ($scope, GoogleDistanceAPI, $modal, $log) {
+    $scope.items = ['item1', 'item2', 'item3'];
+    $scope.open = function (size) {
+        var modalInstance = $modal.open({
+            templateUrl: 'myModalContent.html',
+            controller: 'ModalInstanceCtrl',
+            size: size,
+            resolve: {
+                items: function () {
+                    return $scope.items;
+                }
+            }
+        });
+
+        modalInstance.result.then(function (selectedItem) {
+            $scope.selected = selectedItem;
+        }, function () {
+            $log.info('Modal dismissed at: ' + new Date());
+        });
+    };
     $scope.details = false;
     $scope.delivery = 0;
     $scope.total = 0;
@@ -42,18 +61,18 @@ app.controller('FormDemoCtrl', ['$scope', 'GoogleDistanceAPI', function ($scope,
 
     $scope.update = function (key) {
         $scope.details = true;
-        $scope.item = key;
-        var subtotal = $scope.item.price * $scope.multiplier;
+        $scope.thing = key;
+        var subtotal = $scope.thing.price * $scope.multiplier;
         $scope.subtotal = subtotal;
         $scope.tax = subtotal * 0.06;
-        $scope.total = $scope.delivery + $scope.tax + $scope.item.price * $scope.multiplier;
+        $scope.total = $scope.delivery + $scope.tax + $scope.thing.price * $scope.multiplier;
     }
 
     $scope.change = function (key) {
-        var subtotal = $scope.item.price * key;
+        var subtotal = $scope.thing.price * key;
         $scope.subtotal = subtotal;
         $scope.tax = subtotal * 0.06;
-        $scope.total = $scope.delivery + $scope.tax + $scope.item.price * $scope.multiplier;
+        $scope.total = $scope.delivery + $scope.tax + $scope.thing.price * $scope.multiplier;
     }
 
     $scope.result = ''
@@ -145,7 +164,7 @@ app.controller('FormDemoCtrl', ['$scope', 'GoogleDistanceAPI', function ($scope,
                 } else {
                     $scope.delivery = 3;
                 }
-                $scope.total = $scope.delivery + $scope.tax + $scope.item.price * $scope.multiplier;
+                $scope.total = $scope.delivery + $scope.tax + $scope.thing.price * $scope.multiplier;
 
                 return distanceMatrix;
             });
@@ -153,7 +172,7 @@ app.controller('FormDemoCtrl', ['$scope', 'GoogleDistanceAPI', function ($scope,
 
     function getTotal() {
         setTimeout(function () {
-            $scope.total = $scope.delivery + $scope.tax + $scope.item.price * $scope.multiplier;
+            $scope.total = $scope.delivery + $scope.tax + $scope.thing.price * $scope.multiplier;
         }, 500);
     }
 
