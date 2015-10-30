@@ -3,15 +3,15 @@
         <div class="col-sm-12 b-r">
             <h3 class="m-t-none m-b font-thin">Quote Request</h3>
             <p>Enter the contact information you'd like us to reach you at.</p>
-            <form role="form">
+            <form role="form" ngSubmit="submit()">
                 <div class="col-md-12">
                     <div class="form-group">
                         <label>First Name</label>
-                        <input type="email" class="form-control" placeholder="Enter email">
+                        <input type="text" class="form-control" placeholder="Enter first name" ng-model="customer.name">
                     </div>
                     <div class="form-group">
                         <label>Last Name</label>
-                        <input type="text" class="form-control" placeholder="Password">
+                        <input type="text" class="form-control" placeholder="enter last name" ng-model="customer.name">
                     </div>
                 </div>
 
@@ -21,11 +21,11 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label>Phone</label>
-                        <input type="text" class="form-control" placeholder="Enter Phone">
+                        <input type="text" class="form-control" placeholder="Enter Phone" ng-model="customer.phone">
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Enter Email">
+                        <input type="email" class="form-control" placeholder="Enter Email" ng-model="customer.email">
                     </div>
                 </div>
                 <div class="form-group">

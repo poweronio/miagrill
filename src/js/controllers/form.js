@@ -3,9 +3,21 @@
 /* Controllers */
 
 // Form controller
-app.controller('FormDemoCtrl', ['$scope', 'GoogleDistanceAPI', '$modal', '$log', function ($scope, GoogleDistanceAPI, $modal, $log) {
+app.controller('FormDemoCtrl', ['$http', '$scope', 'GoogleDistanceAPI', '$modal', '$log', function ($http, $scope, GoogleDistanceAPI, $modal, $log) {
     $scope.items = ['item1', 'item2', 'item3'];
     $scope.open = function (size) {
+        $scope.order = {
+            product: $scope.thing.name,
+            quantity: $scope.multiplier,
+            address: $scope.details.formatted_address,
+            distance: $scope.distances,
+            subtotal: $scope.subtotal,
+            tax: $scope.tax,
+            delivery: $scope.delivery,
+            total: $scope.total
+        }
+        console.info($scope.order);
+
         var modalInstance = $modal.open({
             templateUrl: 'myModalContent.html',
             controller: 'ModalInstanceCtrl',
@@ -23,6 +35,21 @@ app.controller('FormDemoCtrl', ['$scope', 'GoogleDistanceAPI', '$modal', '$log',
             $log.info('Modal dismissed at: ' + new Date());
         });
     };
+
+    $scope.submit = function () {
+        var data = {
+            customer: $scope.customer,
+            order: $scope.order
+        }
+        $http.post('http://cr.poweron.io/sendorder.php', data)
+            .success(function (data) {
+                alert('Mail Sent');
+            }).error(function (data) {
+                alert('Mail Failed');
+            });
+        //        $scope.customer
+        //        $scope.order
+    }
     $scope.details = false;
     $scope.delivery = 0;
     $scope.total = 0;
@@ -174,6 +201,20 @@ app.controller('FormDemoCtrl', ['$scope', 'GoogleDistanceAPI', '$modal', '$log',
         setTimeout(function () {
             $scope.total = $scope.delivery + $scope.tax + $scope.thing.price * $scope.multiplier;
         }, 500);
+    }
+
+    $scope.consolidateFields = function () {
+        $scope.order = {
+            product: $scope.thing.name,
+            quantity: $scope.multiplier,
+            address: $scope.details.formatted_address,
+            distance: $scope.distances,
+            subtotal: $scope.subtotal,
+            tax: $scope.tax,
+            delivery: $scope.delivery,
+            total: $scope.total
+        }
+        console.info($scope.order);
     }
 
 
