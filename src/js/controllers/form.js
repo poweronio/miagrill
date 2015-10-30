@@ -41,7 +41,7 @@ app.controller('FormDemoCtrl', ['$http', '$scope', 'GoogleDistanceAPI', '$modal'
             customer: $scope.customer,
             order: $scope.order
         }
-        $http.post('http://cr.poweron.io/sendorder.php', data)
+        $http.post('http://ibytedigital.com/sendorder.php', data)
             .success(function (data) {
                 alert('Mail Sent');
             }).error(function (data) {
