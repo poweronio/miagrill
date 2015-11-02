@@ -9,6 +9,39 @@
 </div>
 <form ng-submit="consolidateFields()">
     <div class="row text-lg" ng-controller="FormDemoCtrl">
+        <div class="col-sm-12 m-t-lg">
+
+            <div class="col-sm-6">
+                <div class="panel bg-success dker b-a ">
+                    <div class="panel-heading">
+                        <label class="control-label h3">{{products[0].name}}</strong>
+                        </label>
+                    </div>
+                    <div class="list-group bg-white" ng-repeat="include in products[0].includes track by $index">
+                        <a href class="list-group-item">
+                            <i class="fa fa-fw fa-check-square-o"></i> {{include}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="panel bg-success dker b-a ">
+                    <div class="panel-heading">
+                        <label class="control-label h3">{{products[1].name}}</strong>
+                        </label>
+                    </div>
+                    <div class="list-group bg-white" ng-repeat="include in products[1].includes track by $index">
+                        <a href class="list-group-item">
+                            <i class="fa fa-fw fa-check-square-o"></i> {{include}}
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
         <div class="col-sm-12">
 
             <div class="form-group">
@@ -31,19 +64,6 @@
 
         <div class="col-sm-12 m-t-lg">
 
-            <div class="col-sm-6" ng-show="details">
-                <div class="panel bg-success dker b-a ">
-                    <div class="panel-heading">
-                        <label class="control-label h3">{{thing.name}} - This Includes</strong>
-                        </label>
-                    </div>
-                    <div class="list-group bg-white" ng-repeat="include in thing.includes track by $index">
-                        <a href class="list-group-item">
-                            <i class="fa fa-fw fa-check-square-o"></i> {{include}}
-                        </a>
-                    </div>
-                </div>
-            </div>
 
             <div class="col-sm-6" ng-show="details">
                 <div class="panel bg">
@@ -70,6 +90,8 @@
 
                     </div>
                 </div>
+            </div>
+            <div class="col-sm-6" ng-show="details">
                 <div class="panel no-bg">
                     <div class="panel-body">
 
@@ -124,6 +146,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 </form>
