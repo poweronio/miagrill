@@ -3,14 +3,15 @@
 */
 
 html {
-    background-color: #f0f3f4;
+    background: url('../img/bgpattern.jpg');
+    background-repeat: repeat;
 }
 body {
     font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
     line-height: 1.42857143;
-    color: #58666e;
+    color: #dcddde;
     background-color: transparent;
 }
 *:focus {
@@ -49,6 +50,12 @@ small,
 .badge.bg-light,
 .label.bg-light {
     text-shadow: none;
+}
+.bg-grey {
+    background-color: #191919;
+}
+.btn btn-default bootstrap-touchspin-up {
+    background-color: #1A9C39!important;
 }
 .badge {
     background-color: #cfdadd;
@@ -372,7 +379,7 @@ a.list-group-item.hover {
 }
 .panel-default > .panel-heading,
 .panel-default > .panel-footer {
-    border-color: #edf1f2;
+    border-color: #191919;
 }
 .panel-group .panel-heading + .panel-collapse .panel-body {
     border-top: 1px solid #eaedef;
@@ -543,7 +550,7 @@ body {
     z-index: -1;
     display: block;
     width: inherit;
-    background-color: #f0f3f4;
+    background-color: 'transparent';
     border: inherit;
     content: "";
 }
@@ -919,7 +926,9 @@ html.bg {
 }
 @media (min-width: 768px) {
     .app.container {
-        width: 750px;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
         -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
     }
@@ -3952,6 +3961,9 @@ a.text-#000000:hover {
 }
 .w-xs {
     width: 90px;
+}
+.w-xsm {
+    width: 101px;
 }
 .w-sm {
     width: 150px;

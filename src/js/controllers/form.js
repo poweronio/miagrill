@@ -532,7 +532,7 @@ app.controller('FormDemoCtrl2', ['$http', '$scope', 'GoogleDistanceAPI', '$modal
   },
         {
             "id": 43,
-            "item": "Hors Dâ€™oeurve/Appetizers",
+            "item": "Hors D'oeuvre/Appetizers",
             "price": null,
             "note": ""
   },
