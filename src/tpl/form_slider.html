@@ -7,7 +7,7 @@
   ">
     <h1 class="text-light">Off-Site Catering</h1>
 
-    <form ng-submit="consolidateFields()">
+    <form ng-submit="open('lg')">
         <div class="row text-md" ng-controller="FormDemoCtrl2">
             <div class="col-sm-8 col-xs-12">
                 <div class="" ng-repeat="item in products track by $index">
@@ -104,7 +104,7 @@
                                     <div ng-include="'tpl/modal.form.html'"></div>
                                 </script>
                                 <!--                                <div class="col-xs-12">-->
-                                <button ng-disabled='form.$invalid' class="btn btn-md btn-block btn-success dker" ng-click="open('lg')" tabindex="0">Submit Quote</button>
+                                <button class="btn btn-md btn-block btn-success dker" ng-click="open('lg')" tabindex="0">Submit Quote</button>
                                 <!--                                </div>-->
                             </div>
                         </div>
