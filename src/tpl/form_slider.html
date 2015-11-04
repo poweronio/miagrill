@@ -25,9 +25,10 @@
                                     <i class="fa fa-usd "></i> {{item.price | number:2}}
                                 </button>
                             </div>
-                            <div class="w-xsm pull-right ">
+                            <div class="w-xsm pull-right " tooltip-placement="right" tooltip="{{item.tooltip}}">
                                 <input ui-jq="TouchSpin " type="text " class="form-control w-xs " ng-change=change($index) data-min='0' data-max="50 " data-step="1 " ng-model="item.quantity " required>
                             </div>
+
                         </div>
                     </div>
                 </div>
