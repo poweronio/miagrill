@@ -14,7 +14,7 @@
                     <div class="col-xs-12 m-b m-t" ng-if="!item.price">
                         <h1 class="text-center text-danger dk">{{item.item}}</h1>
                     </div>
-                    <div class="col-xs-12 b-b b-dark m-t-xs" style="line-height:16px" ng-if="item.price">
+                    <div tooltip-placement="right" tooltip="{{item.tooltip}}" class="col-xs-12 b-b b-dark m-t-xs" style="line-height:16px" ng-if="item.price">
                         <div class="list-group">
                             <div class="col-xs-7">
                                 <span>{{item.item}}</span>
