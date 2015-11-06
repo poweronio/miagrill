@@ -11,8 +11,9 @@
     <p>(Please Allow 5 Hours For Prep Time)
         <br> (24 Hours For Items With A *)</p>
 
-    <form ng-submit="open('lg')">
-        <div class="row text-md" ng-controller="FormDemoCtrl2">
+
+    <div class="row text-md" ng-controller="FormDemoCtrl2">
+        <form ng-submit="open('lg')">
             <div class="col-sm-8 col-xs-12">
                 <div class="" ng-repeat="item in products track by $index">
                     <div class="col-xs-12 m-b m-t" ng-if="!item.price">
@@ -39,8 +40,6 @@
             </div>
             <div class="col-sm-4 col-xs-12 ">
                 <div class="panel no-bg m-r-xs m-l-xs">
-                    <!--                        <label class="control-label h4">Address</label>-->
-                    <!--                    </div>-->
                     <div class="panel-body no-padder">
                         <div class="col-sm-12 m-t-sm">
                             <div class="panel-heading font-bold ">
@@ -107,20 +106,20 @@
                                 <script type="text/ng-template" id="myModalContent.html">
                                     <div ng-include="'tpl/modal.form.html'"></div>
                                 </script>
-                                <!--                                <div class="col-xs-12">-->
-                                <button class="btn btn-md btn-block btn-success dker" ng-click="open('lg')" tabindex="0">Submit Quote</button>
-                                <!--                                </div>-->
+                                <button type="submit" class="btn btn-md btn-block btn-success dker" tabindex="0">Submit Quote</button>
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
+    </div>
 
 
 
-    </form>
+
+
     <div class="col-sm-8 col-xs-12">
         <p class="text-center text-danger text-lg"><strong>
             <br>

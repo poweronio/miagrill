@@ -223,7 +223,7 @@ app.controller('FormDemoCtrl2', ['$http', '$scope', 'GoogleDistanceAPI', '$modal
     $scope.items = ['item1', 'item2', 'item3'];
     $scope.open = function (size) {
         $scope.order = {
-            product: $scope.thing.name,
+            //            product: $scope.thing.name,
             quantity: $scope.multiplier,
             address: $scope.details.formatted_address,
             distance: $scope.distances,
